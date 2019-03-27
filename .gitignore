@@ -1,5 +1,7 @@
 data/*
+!data/.gitkeep
 models/*
+!models/.gitkeep
 .idea/*
 .ipynb_checkpoints
 .DS_Store
