@@ -6,7 +6,7 @@ import nltk
 from nltk.tokenize.toktok import ToktokTokenizer
 import spacy
 #>>>python3 -m spacy download en
-spacy_nlp = spacy.load('en')
+spacy_nlp = spacy.load('en_core_web_sm')
 
 #sklearn imports
 from sklearn.model_selection import train_test_split
@@ -16,8 +16,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from nltk.tokenize.toktok import ToktokTokenizer
 stopword_list = spacy.lang.en.stop_words.STOP_WORDS
 tokenizer = ToktokTokenizer()
-stopword_list.remove('no')
-stopword_list.remove('not')
 
 import unicodedata
 def remove_accented_chars(text):
@@ -25,7 +23,7 @@ def remove_accented_chars(text):
     return text
 
 
-from contractions import CONTRACTION_MAP
+from lib.contractions import CONTRACTION_MAP
 
 
 def expand_contractions(text, contraction_mapping=CONTRACTION_MAP):
